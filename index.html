@@ -96,14 +96,16 @@
             </div>
         </div>
         
-        <!-- QUICK ACCESS MENU -->
+        <!-- QUICK ACCESS MENU (RESPONSIVE GRID PADA MOBILE) -->
         <div class="bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm relative z-10 w-full">
-            <div class="max-w-6xl mx-auto px-6 py-3 flex space-x-3 overflow-x-auto scrollbar-hide items-center">
-                <span class="text-xs font-bold text-slate-400 uppercase tracking-widest mr-2 hidden sm:block flex-shrink-0">Menu Akses:</span>
-                <a href="#info" class="flex-shrink-0 px-4 py-1.5 bg-slate-100 border border-slate-200 rounded-full text-xs font-bold text-slate-600 hover:text-brand-DEFAULT hover:border-brand-DEFAULT hover:bg-white whitespace-nowrap transition-all flex items-center gap-1.5"><i data-lucide="info" class="w-3.5 h-3.5"></i> Info Umum</a>
-                <a href="#peserta" class="flex-shrink-0 px-4 py-1.5 bg-slate-100 border border-slate-200 rounded-full text-xs font-bold text-slate-600 hover:text-brand-DEFAULT hover:border-brand-DEFAULT hover:bg-white whitespace-nowrap transition-all flex items-center gap-1.5"><i data-lucide="users" class="w-3.5 h-3.5"></i> Peserta & Materi</a>
-                <a href="#jadwal-petugas" class="flex-shrink-0 px-4 py-1.5 bg-slate-100 border border-slate-200 rounded-full text-xs font-bold text-slate-600 hover:text-brand-DEFAULT hover:border-brand-DEFAULT hover:bg-white whitespace-nowrap transition-all flex items-center gap-1.5"><i data-lucide="calendar-days" class="w-3.5 h-3.5"></i> Jadwal & Petugas</a>
-                <a href="#upload" class="flex-shrink-0 px-4 py-1.5 bg-brand-DEFAULT border border-brand-DEFAULT rounded-full text-xs font-bold text-white hover:bg-brand-dark whitespace-nowrap transition-all flex items-center gap-1.5 shadow-sm shadow-brand-DEFAULT/30"><i data-lucide="cloud-upload" class="w-3.5 h-3.5"></i> Upload Dokumentasi</a>
+            <div class="max-w-6xl mx-auto px-4 py-3">
+                <div class="grid grid-cols-2 gap-2 sm:flex sm:space-x-3 sm:gap-0 items-center justify-center sm:justify-start">
+                    <span class="hidden sm:block text-xs font-bold text-slate-400 uppercase tracking-widest mr-2 flex-shrink-0">Menu Akses:</span>
+                    <a href="#info" class="flex justify-center px-3 py-2 sm:px-4 sm:py-1.5 bg-slate-100 border border-slate-200 rounded-xl sm:rounded-full text-[11px] sm:text-xs font-bold text-slate-600 hover:text-brand-DEFAULT hover:border-brand-DEFAULT hover:bg-white transition-all items-center gap-1.5"><i data-lucide="info" class="w-3.5 h-3.5"></i> Info Umum</a>
+                    <a href="#peserta" class="flex justify-center px-3 py-2 sm:px-4 sm:py-1.5 bg-slate-100 border border-slate-200 rounded-xl sm:rounded-full text-[11px] sm:text-xs font-bold text-slate-600 hover:text-brand-DEFAULT hover:border-brand-DEFAULT hover:bg-white transition-all items-center gap-1.5"><i data-lucide="users" class="w-3.5 h-3.5"></i> Peserta & Materi</a>
+                    <a href="#jadwal-petugas" class="flex justify-center px-3 py-2 sm:px-4 sm:py-1.5 bg-slate-100 border border-slate-200 rounded-xl sm:rounded-full text-[11px] sm:text-xs font-bold text-slate-600 hover:text-brand-DEFAULT hover:border-brand-DEFAULT hover:bg-white transition-all items-center gap-1.5"><i data-lucide="calendar-days" class="w-3.5 h-3.5"></i> Jadwal & Petugas</a>
+                    <a href="#upload" class="flex justify-center px-3 py-2 sm:px-4 sm:py-1.5 bg-brand-DEFAULT border border-brand-DEFAULT rounded-xl sm:rounded-full text-[11px] sm:text-xs font-bold text-white hover:bg-brand-dark transition-all items-center gap-1.5 shadow-sm shadow-brand-DEFAULT/30"><i data-lucide="cloud-upload" class="w-3.5 h-3.5"></i> Upload Foto</a>
+                </div>
             </div>
         </div>
     </header>
@@ -257,7 +259,9 @@
 
             <!-- Tab Content: Jadwal -->
             <div id="jadwal-content" class="tab-content active">
-                <div class="border border-slate-200 rounded-2xl overflow-hidden">
+                
+                <!-- TAMPILAN PC/TABLET (TABEL) -->
+                <div class="hidden md:block border border-slate-200 rounded-2xl overflow-hidden mb-6">
                     <div class="overflow-x-auto w-full">
                         <table class="w-full text-sm text-left whitespace-nowrap min-w-[700px]">
                             <thead class="text-xs text-slate-600 bg-slate-100 uppercase tracking-wider font-bold">
@@ -320,10 +324,87 @@
                             </tbody>
                         </table>
                     </div>
-                    <div class="p-4 bg-orange-50 text-xs md:text-sm text-orange-800 border-t border-orange-100 flex items-start space-x-3">
-                        <i data-lucide="alert-circle" class="w-5 h-5 flex-shrink-0"></i>
-                        <p><strong>Penting:</strong> Agenda umum (persiapan, pengondisian, dll) dimulai pukul 06.30. Sesi tes pertama dimulai tepat pukul 08.00 WIB.</p>
+                </div>
+
+                <!-- TAMPILAN MOBILE (KARTU TANPA GESER) -->
+                <div class="md:hidden space-y-4 mb-6">
+                    <!-- Mobile Card 1 -->
+                    <div class="border border-slate-200 bg-slate-50 rounded-xl p-4">
+                        <div class="font-extrabold text-slate-800 text-lg mb-3 pb-2 border-b border-slate-200">Kelompok 1</div>
+                        <div class="space-y-2">
+                            <div class="flex justify-between items-center text-sm"><span class="text-slate-500 font-medium">Sesi 1 (08.00)</span> <span><span class="bg-blue-100 text-blue-700 px-2 py-0.5 rounded text-xs font-bold mr-1">B.Ing</span> R.01</span></div>
+                            <div class="flex justify-between items-center text-sm"><span class="text-slate-500 font-medium">Sesi 2 (09.15)</span> <span><span class="bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded text-xs font-bold mr-1">BTA</span> R.01</span></div>
+                            <div class="flex justify-between items-center text-sm"><span class="text-slate-500 font-medium">Sesi 3 (10.30)</span> <span><span class="bg-purple-100 text-purple-700 px-2 py-0.5 rounded text-xs font-bold mr-1">TPA</span> Lab 1</span></div>
+                        </div>
                     </div>
+                    <!-- Mobile Card 2 -->
+                    <div class="border border-slate-200 bg-slate-50 rounded-xl p-4">
+                        <div class="font-extrabold text-slate-800 text-lg mb-3 pb-2 border-b border-slate-200">Kelompok 2</div>
+                        <div class="space-y-2">
+                            <div class="flex justify-between items-center text-sm"><span class="text-slate-500 font-medium">Sesi 1 (08.00)</span> <span><span class="bg-blue-100 text-blue-700 px-2 py-0.5 rounded text-xs font-bold mr-1">B.Ing</span> R.02</span></div>
+                            <div class="flex justify-between items-center text-sm"><span class="text-slate-500 font-medium">Sesi 2 (09.15)</span> <span><span class="bg-purple-100 text-purple-700 px-2 py-0.5 rounded text-xs font-bold mr-1">TPA</span> Lab 1</span></div>
+                            <div class="flex justify-between items-center text-sm"><span class="text-slate-500 font-medium">Sesi 3 (10.30)</span> <span><span class="bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded text-xs font-bold mr-1">BTA</span> R.02</span></div>
+                        </div>
+                    </div>
+                    <!-- Mobile Card 3 -->
+                    <div class="border border-slate-200 bg-slate-50 rounded-xl p-4">
+                        <div class="font-extrabold text-slate-800 text-lg mb-3 pb-2 border-b border-slate-200">Kelompok 3</div>
+                        <div class="space-y-2">
+                            <div class="flex justify-between items-center text-sm"><span class="text-slate-500 font-medium">Sesi 1 (08.00)</span> <span><span class="bg-blue-100 text-blue-700 px-2 py-0.5 rounded text-xs font-bold mr-1">B.Ing</span> R.03</span></div>
+                            <div class="flex justify-between items-center text-sm"><span class="text-slate-500 font-medium">Sesi 2 (09.15)</span> <span><span class="bg-purple-100 text-purple-700 px-2 py-0.5 rounded text-xs font-bold mr-1">TPA</span> L.1&2</span></div>
+                            <div class="flex justify-between items-center text-sm"><span class="text-slate-500 font-medium">Sesi 3 (10.30)</span> <span><span class="bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded text-xs font-bold mr-1">BTA</span> R.03</span></div>
+                        </div>
+                    </div>
+                    <!-- Mobile Card 4 -->
+                    <div class="border border-slate-200 bg-slate-50 rounded-xl p-4">
+                        <div class="font-extrabold text-slate-800 text-lg mb-3 pb-2 border-b border-slate-200">Kelompok 4</div>
+                        <div class="space-y-2">
+                            <div class="flex justify-between items-center text-sm"><span class="text-slate-500 font-medium">Sesi 1 (08.00)</span> <span><span class="bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded text-xs font-bold mr-1">BTA</span> R.04</span></div>
+                            <div class="flex justify-between items-center text-sm"><span class="text-slate-500 font-medium">Sesi 2 (09.15)</span> <span><span class="bg-purple-100 text-purple-700 px-2 py-0.5 rounded text-xs font-bold mr-1">TPA</span> Lab 2</span></div>
+                            <div class="flex justify-between items-center text-sm"><span class="text-slate-500 font-medium">Sesi 3 (10.30)</span> <span><span class="bg-blue-100 text-blue-700 px-2 py-0.5 rounded text-xs font-bold mr-1">B.Ing</span> R.04</span></div>
+                        </div>
+                    </div>
+                    <!-- Mobile Card 5 -->
+                    <div class="border border-slate-200 bg-slate-50 rounded-xl p-4">
+                        <div class="font-extrabold text-slate-800 text-lg mb-3 pb-2 border-b border-slate-200">Kelompok 5</div>
+                        <div class="space-y-2">
+                            <div class="flex justify-between items-center text-sm"><span class="text-slate-500 font-medium">Sesi 1 (08.00)</span> <span><span class="bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded text-xs font-bold mr-1">BTA</span> R.05</span></div>
+                            <div class="flex justify-between items-center text-sm"><span class="text-slate-500 font-medium">Sesi 2 (09.15)</span> <span><span class="bg-blue-100 text-blue-700 px-2 py-0.5 rounded text-xs font-bold mr-1">B.Ing</span> R.05</span></div>
+                            <div class="flex justify-between items-center text-sm"><span class="text-slate-500 font-medium">Sesi 3 (10.30)</span> <span><span class="bg-purple-100 text-purple-700 px-2 py-0.5 rounded text-xs font-bold mr-1">TPA</span> L.1&2</span></div>
+                        </div>
+                    </div>
+                    <!-- Mobile Card 6 -->
+                    <div class="border border-slate-200 bg-slate-50 rounded-xl p-4">
+                        <div class="font-extrabold text-slate-800 text-lg mb-3 pb-2 border-b border-slate-200">Kelompok 6</div>
+                        <div class="space-y-2">
+                            <div class="flex justify-between items-center text-sm"><span class="text-slate-500 font-medium">Sesi 1 (08.00)</span> <span><span class="bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded text-xs font-bold mr-1">BTA</span> R.06</span></div>
+                            <div class="flex justify-between items-center text-sm"><span class="text-slate-500 font-medium">Sesi 2 (09.15)</span> <span><span class="bg-blue-100 text-blue-700 px-2 py-0.5 rounded text-xs font-bold mr-1">B.Ing</span> R.06</span></div>
+                            <div class="flex justify-between items-center text-sm"><span class="text-slate-500 font-medium">Sesi 3 (10.30)</span> <span><span class="bg-purple-100 text-purple-700 px-2 py-0.5 rounded text-xs font-bold mr-1">TPA</span> Lab 2</span></div>
+                        </div>
+                    </div>
+                    <!-- Mobile Card 7 -->
+                    <div class="border border-slate-200 bg-slate-50 rounded-xl p-4">
+                        <div class="font-extrabold text-slate-800 text-lg mb-3 pb-2 border-b border-slate-200">Kelompok 7</div>
+                        <div class="space-y-2">
+                            <div class="flex justify-between items-center text-sm"><span class="text-slate-500 font-medium">Sesi 1 (08.00)</span> <span><span class="bg-purple-100 text-purple-700 px-2 py-0.5 rounded text-xs font-bold mr-1">TPA</span> Lab 1</span></div>
+                            <div class="flex justify-between items-center text-sm"><span class="text-slate-500 font-medium">Sesi 2 (09.15)</span> <span><span class="bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded text-xs font-bold mr-1">BTA</span> R.07</span></div>
+                            <div class="flex justify-between items-center text-sm"><span class="text-slate-500 font-medium">Sesi 3 (10.30)</span> <span><span class="bg-blue-100 text-blue-700 px-2 py-0.5 rounded text-xs font-bold mr-1">B.Ing</span> R.07</span></div>
+                        </div>
+                    </div>
+                    <!-- Mobile Card 8 -->
+                    <div class="border border-slate-200 bg-slate-50 rounded-xl p-4">
+                        <div class="font-extrabold text-slate-800 text-lg mb-3 pb-2 border-b border-slate-200">Kelompok 8</div>
+                        <div class="space-y-2">
+                            <div class="flex justify-between items-center text-sm"><span class="text-slate-500 font-medium">Sesi 1 (08.00)</span> <span><span class="bg-purple-100 text-purple-700 px-2 py-0.5 rounded text-xs font-bold mr-1">TPA</span> Lab 2</span></div>
+                            <div class="flex justify-between items-center text-sm"><span class="text-slate-500 font-medium">Sesi 2 (09.15)</span> <span><span class="bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded text-xs font-bold mr-1">BTA</span> R.08</span></div>
+                            <div class="flex justify-between items-center text-sm"><span class="text-slate-500 font-medium">Sesi 3 (10.30)</span> <span><span class="bg-blue-100 text-blue-700 px-2 py-0.5 rounded text-xs font-bold mr-1">B.Ing</span> R.08</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-4 bg-orange-50 text-xs md:text-sm text-orange-800 md:border md:border-orange-100 md:rounded-2xl border-t border-orange-100 flex items-start space-x-3">
+                    <i data-lucide="alert-circle" class="w-5 h-5 flex-shrink-0"></i>
+                    <p><strong>Penting:</strong> Agenda umum (persiapan, pengondisian, dll) dimulai pukul 06.30. Sesi tes pertama dimulai tepat pukul 08.00 WIB.</p>
                 </div>
             </div>
 
@@ -397,116 +478,116 @@
                 </p>
             </div>
 
-            <!-- Links Grid -->
+            <!-- Links Grid (Diperbarui dengan Warna Putih & Ukuran Lebih Informatif) -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 relative z-10">
                 <!-- Card 1 -->
                 <a href="https://drive.google.com/drive/folders/1AphVOHT7XCdi2Cc04itmLU4c0GYuNKYI?usp=sharing" target="_blank" rel="noreferrer" 
-                   class="group flex flex-col justify-between p-5 bg-slate-900 border border-slate-800 rounded-2xl hover:border-brand-DEFAULT hover:bg-slate-800/80 hover:shadow-[0_0_20px_rgba(14,165,233,0.3)] transition-all duration-300">
+                   class="group flex flex-col justify-between p-6 bg-slate-900 border border-slate-700 rounded-2xl hover:border-brand-DEFAULT hover:bg-slate-800/80 hover:shadow-[0_0_20px_rgba(14,165,233,0.3)] transition-all duration-300">
                     <div>
                         <div class="text-sm font-extrabold text-white uppercase tracking-widest mb-1">Kelompok 1</div>
-                        <div class="font-medium text-xs text-brand-DEFAULT">Ibu Omaisaroh</div>
+                        <div class="font-medium text-base text-white">Ibu Omaisaroh</div>
                     </div>
                     <div class="mt-6 flex justify-end">
-                        <div class="w-8 h-8 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center group-hover:bg-brand-DEFAULT group-hover:border-brand-DEFAULT text-slate-400 group-hover:text-white transition-all">
-                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        <div class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center group-hover:bg-brand-DEFAULT group-hover:border-brand-DEFAULT text-white transition-all shadow-sm">
+                            <i data-lucide="arrow-right" class="w-5 h-5"></i>
                         </div>
                     </div>
                 </a>
 
                 <!-- Card 2 -->
                 <a href="https://drive.google.com/drive/folders/1jacp8os0e9s6-WjIOJ-AX5XFlB3as84C?usp=sharing" target="_blank" rel="noreferrer" 
-                   class="group flex flex-col justify-between p-5 bg-slate-900 border border-slate-800 rounded-2xl hover:border-brand-DEFAULT hover:bg-slate-800/80 hover:shadow-[0_0_20px_rgba(14,165,233,0.3)] transition-all duration-300">
+                   class="group flex flex-col justify-between p-6 bg-slate-900 border border-slate-700 rounded-2xl hover:border-brand-DEFAULT hover:bg-slate-800/80 hover:shadow-[0_0_20px_rgba(14,165,233,0.3)] transition-all duration-300">
                     <div>
                         <div class="text-sm font-extrabold text-white uppercase tracking-widest mb-1">Kelompok 2</div>
-                        <div class="font-medium text-xs text-brand-DEFAULT">Rosa Widya Ningrum</div>
+                        <div class="font-medium text-base text-white">Rosa Widya Ningrum</div>
                     </div>
                     <div class="mt-6 flex justify-end">
-                        <div class="w-8 h-8 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center group-hover:bg-brand-DEFAULT group-hover:border-brand-DEFAULT text-slate-400 group-hover:text-white transition-all">
-                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        <div class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center group-hover:bg-brand-DEFAULT group-hover:border-brand-DEFAULT text-white transition-all shadow-sm">
+                            <i data-lucide="arrow-right" class="w-5 h-5"></i>
                         </div>
                     </div>
                 </a>
 
                 <!-- Card 3 -->
                 <a href="https://drive.google.com/drive/folders/1tkgwSd795-XmngvLQvwdVhSxx_8SmSQI?usp=sharing" target="_blank" rel="noreferrer" 
-                   class="group flex flex-col justify-between p-5 bg-slate-900 border border-slate-800 rounded-2xl hover:border-brand-DEFAULT hover:bg-slate-800/80 hover:shadow-[0_0_20px_rgba(14,165,233,0.3)] transition-all duration-300">
+                   class="group flex flex-col justify-between p-6 bg-slate-900 border border-slate-700 rounded-2xl hover:border-brand-DEFAULT hover:bg-slate-800/80 hover:shadow-[0_0_20px_rgba(14,165,233,0.3)] transition-all duration-300">
                     <div>
                         <div class="text-sm font-extrabold text-white uppercase tracking-widest mb-1">Kelompok 3</div>
-                        <div class="font-medium text-xs text-brand-DEFAULT">Sri Wahyuningsih</div>
+                        <div class="font-medium text-base text-white">Sri Wahyuningsih</div>
                     </div>
                     <div class="mt-6 flex justify-end">
-                        <div class="w-8 h-8 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center group-hover:bg-brand-DEFAULT group-hover:border-brand-DEFAULT text-slate-400 group-hover:text-white transition-all">
-                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        <div class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center group-hover:bg-brand-DEFAULT group-hover:border-brand-DEFAULT text-white transition-all shadow-sm">
+                            <i data-lucide="arrow-right" class="w-5 h-5"></i>
                         </div>
                     </div>
                 </a>
 
                 <!-- Card 4 -->
                 <a href="https://drive.google.com/drive/folders/1uQo3Smxi3piIuvNIM1E9npaXzx54-yUD?usp=sharing" target="_blank" rel="noreferrer" 
-                   class="group flex flex-col justify-between p-5 bg-slate-900 border border-slate-800 rounded-2xl hover:border-brand-DEFAULT hover:bg-slate-800/80 hover:shadow-[0_0_20px_rgba(14,165,233,0.3)] transition-all duration-300">
+                   class="group flex flex-col justify-between p-6 bg-slate-900 border border-slate-700 rounded-2xl hover:border-brand-DEFAULT hover:bg-slate-800/80 hover:shadow-[0_0_20px_rgba(14,165,233,0.3)] transition-all duration-300">
                     <div>
                         <div class="text-sm font-extrabold text-white uppercase tracking-widest mb-1">Kelompok 4</div>
-                        <div class="font-medium text-xs text-brand-DEFAULT">Endah Wahyuningsih</div>
+                        <div class="font-medium text-base text-white">Endah Wahyuningsih</div>
                     </div>
                     <div class="mt-6 flex justify-end">
-                        <div class="w-8 h-8 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center group-hover:bg-brand-DEFAULT group-hover:border-brand-DEFAULT text-slate-400 group-hover:text-white transition-all">
-                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        <div class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center group-hover:bg-brand-DEFAULT group-hover:border-brand-DEFAULT text-white transition-all shadow-sm">
+                            <i data-lucide="arrow-right" class="w-5 h-5"></i>
                         </div>
                     </div>
                 </a>
 
                 <!-- Card 5 -->
                 <a href="https://drive.google.com/drive/folders/1eq9vDSYgPAf6F7NGZDhUui6-bS4DMLRn?usp=sharing" target="_blank" rel="noreferrer" 
-                   class="group flex flex-col justify-between p-5 bg-slate-900 border border-slate-800 rounded-2xl hover:border-brand-DEFAULT hover:bg-slate-800/80 hover:shadow-[0_0_20px_rgba(14,165,233,0.3)] transition-all duration-300">
+                   class="group flex flex-col justify-between p-6 bg-slate-900 border border-slate-700 rounded-2xl hover:border-brand-DEFAULT hover:bg-slate-800/80 hover:shadow-[0_0_20px_rgba(14,165,233,0.3)] transition-all duration-300">
                     <div>
                         <div class="text-sm font-extrabold text-white uppercase tracking-widest mb-1">Kelompok 5</div>
-                        <div class="font-medium text-xs text-brand-DEFAULT">Amalia Ikhlas Sofy P.</div>
+                        <div class="font-medium text-base text-white">Amalia Ikhlas Sofy P.</div>
                     </div>
                     <div class="mt-6 flex justify-end">
-                        <div class="w-8 h-8 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center group-hover:bg-brand-DEFAULT group-hover:border-brand-DEFAULT text-slate-400 group-hover:text-white transition-all">
-                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        <div class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center group-hover:bg-brand-DEFAULT group-hover:border-brand-DEFAULT text-white transition-all shadow-sm">
+                            <i data-lucide="arrow-right" class="w-5 h-5"></i>
                         </div>
                     </div>
                 </a>
 
                 <!-- Card 6 -->
                 <a href="https://drive.google.com/drive/folders/12CKL222MNe8_v44RtxvHO77B3ngV3-ha?usp=sharing" target="_blank" rel="noreferrer" 
-                   class="group flex flex-col justify-between p-5 bg-slate-900 border border-slate-800 rounded-2xl hover:border-brand-DEFAULT hover:bg-slate-800/80 hover:shadow-[0_0_20px_rgba(14,165,233,0.3)] transition-all duration-300">
+                   class="group flex flex-col justify-between p-6 bg-slate-900 border border-slate-700 rounded-2xl hover:border-brand-DEFAULT hover:bg-slate-800/80 hover:shadow-[0_0_20px_rgba(14,165,233,0.3)] transition-all duration-300">
                     <div>
                         <div class="text-sm font-extrabold text-white uppercase tracking-widest mb-1">Kelompok 6</div>
-                        <div class="font-medium text-xs text-brand-DEFAULT">Erlin Nanda Puspita</div>
+                        <div class="font-medium text-base text-white">Erlin Nanda Puspita</div>
                     </div>
                     <div class="mt-6 flex justify-end">
-                        <div class="w-8 h-8 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center group-hover:bg-brand-DEFAULT group-hover:border-brand-DEFAULT text-slate-400 group-hover:text-white transition-all">
-                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        <div class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center group-hover:bg-brand-DEFAULT group-hover:border-brand-DEFAULT text-white transition-all shadow-sm">
+                            <i data-lucide="arrow-right" class="w-5 h-5"></i>
                         </div>
                     </div>
                 </a>
 
                 <!-- Card 7 -->
                 <a href="https://drive.google.com/drive/folders/1rwxNx3YLsslB9r2E0uCgMNLI_OgvrpW_?usp=sharing" target="_blank" rel="noreferrer" 
-                   class="group flex flex-col justify-between p-5 bg-slate-900 border border-slate-800 rounded-2xl hover:border-brand-DEFAULT hover:bg-slate-800/80 hover:shadow-[0_0_20px_rgba(14,165,233,0.3)] transition-all duration-300">
+                   class="group flex flex-col justify-between p-6 bg-slate-900 border border-slate-700 rounded-2xl hover:border-brand-DEFAULT hover:bg-slate-800/80 hover:shadow-[0_0_20px_rgba(14,165,233,0.3)] transition-all duration-300">
                     <div>
                         <div class="text-sm font-extrabold text-white uppercase tracking-widest mb-1">Kelompok 7</div>
-                        <div class="font-medium text-xs text-brand-DEFAULT">Hendri Lutfiatul H. N.</div>
+                        <div class="font-medium text-base text-white">Hendri Lutfiatul H. N.</div>
                     </div>
                     <div class="mt-6 flex justify-end">
-                        <div class="w-8 h-8 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center group-hover:bg-brand-DEFAULT group-hover:border-brand-DEFAULT text-slate-400 group-hover:text-white transition-all">
-                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        <div class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center group-hover:bg-brand-DEFAULT group-hover:border-brand-DEFAULT text-white transition-all shadow-sm">
+                            <i data-lucide="arrow-right" class="w-5 h-5"></i>
                         </div>
                     </div>
                 </a>
 
                 <!-- Card 8 -->
                 <a href="https://drive.google.com/drive/folders/1EIE7xGUE0nzHEG1VhpaMkT1vS-3i2tHS?usp=sharing" target="_blank" rel="noreferrer" 
-                   class="group flex flex-col justify-between p-5 bg-slate-900 border border-slate-800 rounded-2xl hover:border-brand-DEFAULT hover:bg-slate-800/80 hover:shadow-[0_0_20px_rgba(14,165,233,0.3)] transition-all duration-300">
+                   class="group flex flex-col justify-between p-6 bg-slate-900 border border-slate-700 rounded-2xl hover:border-brand-DEFAULT hover:bg-slate-800/80 hover:shadow-[0_0_20px_rgba(14,165,233,0.3)] transition-all duration-300">
                     <div>
                         <div class="text-sm font-extrabold text-white uppercase tracking-widest mb-1">Kelompok 8</div>
-                        <div class="font-medium text-xs text-brand-DEFAULT">Dewi Ayu Ningtyas</div>
+                        <div class="font-medium text-base text-white">Dewi Ayu Ningtyas</div>
                     </div>
                     <div class="mt-6 flex justify-end">
-                        <div class="w-8 h-8 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center group-hover:bg-brand-DEFAULT group-hover:border-brand-DEFAULT text-slate-400 group-hover:text-white transition-all">
-                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        <div class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center group-hover:bg-brand-DEFAULT group-hover:border-brand-DEFAULT text-white transition-all shadow-sm">
+                            <i data-lucide="arrow-right" class="w-5 h-5"></i>
                         </div>
                     </div>
                 </a>
