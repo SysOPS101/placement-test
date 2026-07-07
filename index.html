@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juknis Placement Test - SMP Muhammadiyah 2 Skt</title>
+    
+    <!-- Google Fonts: Space Grotesk (Tech Font) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Space Grotesk"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            light: '#e0f2fe',
+                            DEFAULT: '#0ea5e9',
+                            dark: '#0369a1',
+                            purple: '#8b5cf6',
+                            pink: '#ec4899'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* Custom Styles for active tabs */
+        .tab-btn {
+            transition: all 0.3s ease;
+        }
+        .tab-btn.active {
+            color: #0ea5e9;
+            border-bottom: 2px solid #0ea5e9;
+        }
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.4s ease-in-out;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        /* Smooth scrolling */
+        html { scroll-behavior: smooth; }
+        
+        /* Hide scrollbar for menu */
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans selection:bg-brand-DEFAULT selection:text-white">
+
+    <!-- HEADER -->
+    <header class="sticky top-0 z-50 flex flex-col">
+        <div class="bg-gradient-to-r from-blue-900 via-indigo-900 to-purple-900 text-white shadow-lg border-b border-indigo-500/30 relative z-20">
+            <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                    <div class="w-12 h-12 bg-gradient-to-br from-brand-DEFAULT to-brand-purple rounded-xl flex items-center justify-center font-bold text-xl shadow-inner flex-shrink-0">
+                        M2
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-bold tracking-wide text-sm md:text-base text-transparent bg-clip-text bg-gradient-to-r from-blue-100 to-white">
+                            SMP Muhammadiyah 2 Surakarta
+                        </span>
+                        <span class="text-[10px] md:text-xs text-indigo-300 mt-0.5 leading-snug">
+                            Sekolah Islam Berkemajuan<br>
+                            Beriman, Berkarakter, Berprestasi
+                        </span>
+                    </div>
+                </div>
+                <nav class="text-xs font-semibold text-indigo-200 uppercase tracking-widest hidden md:flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full backdrop-blur-sm border border-white/10 flex-shrink-0">
+                    <i data-lucide="terminal" class="w-4 h-4"></i>
+                    Juknis 2026/2027
+                </nav>
+            </div>
+        </div>
+        
+        <!-- QUICK ACCESS MENU -->
+        <div class="bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm relative z-10 w-full">
+            <div class="max-w-6xl mx-auto px-6 py-3 flex space-x-3 overflow-x-auto scrollbar-hide items-center">
+                <span class="text-xs font-bold text-slate-400 uppercase tracking-widest mr-2 hidden sm:block flex-shrink-0">Menu Akses:</span>
+                <a href="#info" class="flex-shrink-0 px-4 py-1.5 bg-slate-100 border border-slate-200 rounded-full text-xs font-bold text-slate-600 hover:text-brand-DEFAULT hover:border-brand-DEFAULT hover:bg-white whitespace-nowrap transition-all flex items-center gap-1.5"><i data-lucide="info" class="w-3.5 h-3.5"></i> Info Umum</a>
+                <a href="#peserta" class="flex-shrink-0 px-4 py-1.5 bg-slate-100 border border-slate-200 rounded-full text-xs font-bold text-slate-600 hover:text-brand-DEFAULT hover:border-brand-DEFAULT hover:bg-white whitespace-nowrap transition-all flex items-center gap-1.5"><i data-lucide="users" class="w-3.5 h-3.5"></i> Peserta & Materi</a>
+                <a href="#jadwal-petugas" class="flex-shrink-0 px-4 py-1.5 bg-slate-100 border border-slate-200 rounded-full text-xs font-bold text-slate-600 hover:text-brand-DEFAULT hover:border-brand-DEFAULT hover:bg-white whitespace-nowrap transition-all flex items-center gap-1.5"><i data-lucide="calendar-days" class="w-3.5 h-3.5"></i> Jadwal & Petugas</a>
+                <a href="#upload" class="flex-shrink-0 px-4 py-1.5 bg-brand-DEFAULT border border-brand-DEFAULT rounded-full text-xs font-bold text-white hover:bg-brand-dark whitespace-nowrap transition-all flex items-center gap-1.5 shadow-sm shadow-brand-DEFAULT/30"><i data-lucide="cloud-upload" class="w-3.5 h-3.5"></i> Upload Dokumentasi</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-6 py-8 md:py-12 space-y-12">
+        
+        <!-- HERO SECTION -->
+        <section id="info" class="space-y-6 scroll-mt-36">
+            <div class="inline-block px-4 py-1.5 rounded-full bg-blue-100 text-blue-700 text-xs font-bold tracking-wider mb-2 border border-blue-200 uppercase flex w-max items-center gap-2">
+                <span class="relative flex h-2 w-2">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                </span>
+                Sistem Informasi Juknis
+            </div>
+            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tighter leading-tight">
+                Placement Test <br class="hidden md:block"/> 
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-DEFAULT via-brand-purple to-brand-pink">Kelas 7</span>
+            </h1>
+
+            <p class="text-lg text-slate-500 max-w-2xl leading-relaxed mt-4">
+                Kegiatan pemetaan awal peserta didik baru Tahun Ajaran 2026/2027. Berikut adalah rangkuman teknis, pembagian jadwal, dan tautan dokumentasi kegiatan.
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-6">
+                <!-- Info Cards -->
+                <div class="p-5 border border-slate-200 rounded-2xl bg-white shadow-xl shadow-slate-200/40 flex flex-col space-y-3 hover:-translate-y-1 transition-transform duration-300">
+                    <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
+                        <i data-lucide="calendar" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <span class="block text-sm text-slate-500 font-medium">Tanggal</span>
+                        <span class="block font-bold text-slate-800 text-lg">Rabu, 8 Juli 2026</span>
+                    </div>
+                </div>
+                
+                <div class="p-5 border border-slate-200 rounded-2xl bg-white shadow-xl shadow-slate-200/40 flex flex-col space-y-3 hover:-translate-y-1 transition-transform duration-300">
+                    <div class="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center text-purple-600">
+                        <i data-lucide="clock" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <span class="block text-sm text-slate-500 font-medium">Waktu</span>
+                        <span class="block font-bold text-slate-800 text-lg">06.30 - Selesai</span>
+                    </div>
+                </div>
+
+                <div class="p-5 border border-slate-200 rounded-2xl bg-white shadow-xl shadow-slate-200/40 flex flex-col space-y-3 hover:-translate-y-1 transition-transform duration-300">
+                    <div class="w-10 h-10 rounded-full bg-pink-100 flex items-center justify-center text-pink-600">
+                        <i data-lucide="shirt" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <span class="block text-sm text-slate-500 font-medium">Seragam</span>
+                        <span class="block font-bold text-slate-800 text-lg">Terakota (Rabu)</span>
+                    </div>
+                </div>
+
+                <div class="p-5 border border-slate-200 rounded-2xl bg-white shadow-xl shadow-slate-200/40 flex flex-col space-y-3 hover:-translate-y-1 transition-transform duration-300">
+                    <div class="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600">
+                        <i data-lucide="map-pin" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <span class="block text-sm text-slate-500 font-medium">Lokasi</span>
+                        <span class="block font-bold text-slate-800 text-lg">Lt. 2 & Lab Komp</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PESERTA & MATERI -->
+        <section id="peserta" class="grid grid-cols-1 md:grid-cols-2 gap-6 scroll-mt-36">
+            <!-- Data Peserta -->
+            <div class="border-2 border-indigo-50 rounded-3xl bg-white p-6 md:p-8 shadow-xl shadow-indigo-100/50 relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-indigo-100 to-white rounded-bl-full -z-0 opacity-50"></div>
+                <div class="relative z-10">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="p-2 bg-indigo-500 text-white rounded-lg"><i data-lucide="users" class="w-5 h-5"></i></div>
+                        <h2 class="text-xl font-bold tracking-tight text-slate-800">Data Peserta <span class="text-indigo-500 bg-indigo-50 px-2 py-0.5 rounded text-sm">(160 Siswa)</span></h2>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center p-4 bg-slate-50 rounded-xl border border-slate-100">
+                            <div>
+                                <span class="block font-bold text-slate-700">PK Bahasa</span>
+                                <span class="text-xs text-slate-500">Kelompok 1 & 2</span>
+                            </div>
+                            <span class="font-bold text-lg text-indigo-600">28<span class="text-xs text-slate-400 font-normal ml-1">Siswa</span></span>
+                        </div>
+                        <div class="flex justify-between items-center p-4 bg-slate-50 rounded-xl border border-slate-100">
+                            <div>
+                                <span class="block font-bold text-slate-700">PK Tahfidz</span>
+                                <span class="text-xs text-slate-500">Kelompok 2, 3, 4</span>
+                            </div>
+                            <span class="font-bold text-lg text-indigo-600">40<span class="text-xs text-slate-400 font-normal ml-1">Siswa</span></span>
+                        </div>
+                        <div class="flex justify-between items-center p-4 bg-slate-50 rounded-xl border border-slate-100">
+                            <div>
+                                <span class="block font-bold text-slate-700">Reguler</span>
+                                <span class="text-xs text-slate-500">Kelompok 4 - 8</span>
+                            </div>
+                            <span class="font-bold text-lg text-indigo-600">92<span class="text-xs text-slate-400 font-normal ml-1">Siswa</span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Materi Uji -->
+            <div class="border-2 border-pink-50 rounded-3xl bg-white p-6 md:p-8 shadow-xl shadow-pink-100/50 relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-pink-100 to-white rounded-bl-full -z-0 opacity-50"></div>
+                <div class="relative z-10">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="p-2 bg-pink-500 text-white rounded-lg"><i data-lucide="book-open" class="w-5 h-5"></i></div>
+                        <h2 class="text-xl font-bold tracking-tight text-slate-800">Materi Uji</h2>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="p-4 bg-white border border-slate-200 rounded-xl shadow-sm flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-lg bg-pink-50 flex items-center justify-center flex-shrink-0 text-pink-500 font-bold">1</div>
+                            <div>
+                                <div class="font-bold text-slate-800">BTA</div>
+                                <div class="text-sm text-slate-500 mt-1">Tes kemampuan baca tulis Al-Qur'an dasar.</div>
+                            </div>
+                        </div>
+                        <div class="p-4 bg-white border border-slate-200 rounded-xl shadow-sm flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-lg bg-pink-50 flex items-center justify-center flex-shrink-0 text-pink-500 font-bold">2</div>
+                            <div>
+                                <div class="font-bold text-slate-800">Bahasa Inggris</div>
+                                <div class="text-sm text-slate-500 mt-1">Tes kemampuan dasar Bahasa Inggris.</div>
+                            </div>
+                        </div>
+                        <div class="p-4 bg-white border border-slate-200 rounded-xl shadow-sm flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-lg bg-pink-50 flex items-center justify-center flex-shrink-0 text-pink-500 font-bold">3</div>
+                            <div>
+                                <div class="font-bold text-slate-800">TPA</div>
+                                <div class="text-sm text-slate-500 mt-1">Tes Potensi Akademik (Ruang Lab Komputer).</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TABS: JADWAL & PETUGAS -->
+        <section id="jadwal-petugas" class="bg-white rounded-3xl p-6 md:p-8 shadow-xl shadow-slate-200/50 border border-slate-100 scroll-mt-36">
+            <!-- Tab Header -->
+            <div class="flex space-x-2 md:space-x-8 border-b border-slate-200 mb-8 overflow-x-auto pb-2">
+                <button onclick="switchTab('jadwal')" id="tab-jadwal" class="tab-btn active pb-3 text-sm md:text-base font-bold text-slate-400 hover:text-slate-600 whitespace-nowrap px-2">
+                    <i data-lucide="calendar-days" class="w-4 h-4 inline-block mr-2 -mt-1"></i>Jadwal Sesi & Ruang
+                </button>
+                <button onclick="switchTab('petugas')" id="tab-petugas" class="tab-btn pb-3 text-sm md:text-base font-bold text-slate-400 hover:text-slate-600 whitespace-nowrap px-2">
+                    <i data-lucide="user-check" class="w-4 h-4 inline-block mr-2 -mt-1"></i>Daftar Petugas & Penguji
+                </button>
+            </div>
+
+            <!-- Tab Content: Jadwal -->
+            <div id="jadwal-content" class="tab-content active">
+                <div class="border border-slate-200 rounded-2xl overflow-hidden">
+                    <div class="overflow-x-auto w-full">
+                        <table class="w-full text-sm text-left whitespace-nowrap min-w-[700px]">
+                            <thead class="text-xs text-slate-600 bg-slate-100 uppercase tracking-wider font-bold">
+                                <tr>
+                                    <th class="px-6 py-4">Kelompok</th>
+                                    <th class="px-6 py-4">Sesi 1 (08.00-09.00)</th>
+                                    <th class="px-6 py-4">Sesi 2 (09.15-10.15)</th>
+                                    <th class="px-6 py-4">Sesi 3 (10.30-11.30)</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-100">
+                                <tr class="hover:bg-indigo-50/50 transition-colors">
+                                    <td class="px-6 py-4 font-bold text-slate-800">Kelompok 1</td>
+                                    <td class="px-6 py-4 text-slate-600"><span class="bg-blue-100 text-blue-700 px-2 py-1 rounded text-xs font-medium mr-2">B.Ing</span> R.01</td>
+                                    <td class="px-6 py-4 text-slate-600"><span class="bg-emerald-100 text-emerald-700 px-2 py-1 rounded text-xs font-medium mr-2">BTA</span> R.01</td>
+                                    <td class="px-6 py-4 text-slate-600"><span class="bg-purple-100 text-purple-700 px-2 py-1 rounded text-xs font-medium mr-2">TPA</span> Lab 1</td>
+                                </tr>
+                                <tr class="hover:bg-indigo-50/50 transition-colors">
+                                    <td class="px-6 py-4 font-bold text-slate-800">Kelompok 2</td>
+                                    <td class="px-6 py-4 text-slate-600"><span class="bg-blue-100 text-blue-700 px-2 py-1 rounded text-xs font-medium mr-2">B.Ing</span> R.02</td>
+                                    <td class="px-6 py-4 text-slate-600"><span class="bg-purple-100 text-purple-700 px-2 py-1 rounded text-xs font-medium mr-2">TPA</span> Lab 1</td>
+                                    <td class="px-6 py-4 text-slate-600"><span class="bg-emerald-100 text-emerald-700 px-2 py-1 rounded text-xs font-medium mr-2">BTA</span> R.02</td>
+                                </tr>
+                                <tr class="hover:bg-indigo-50/50 transition-colors">
+                                    <td class="px-6 py-4 font-bold text-slate-800">Kelompok 3</td>
+                                    <td class="px-6 py-4 text-slate-600"><span class="bg-blue-100 text-blue-700 px-2 py-1 rounded text-xs font-medium mr-2">B.Ing</span> R.03</td>
+                                    <td class="px-6 py-4 text-slate-600"><span class="bg-purple-100 text-purple-700 px-2 py-1 rounded text-xs font-medium mr-2">TPA</span> Lab 1 & 2</td>
+                                    <td class="px-6 py-4 text-slate-600"><span class="bg-emerald-100 text-emerald-700 px-2 py-1 rounded text-xs font-medium mr-2">BTA</span> R.03</td>
+                                </tr>
+                                <tr class="hover:bg-indigo-50/50 transition-colors">
+                                    <td class="px-6 py-4 font-bold text-slate-800">Kelompok 4</td>
+                                    <td class="px-6 py-4 text-slate-600"><span class="bg-emerald-100 text-emerald-700 px-2 py-1 rounded text-xs font-medium mr-2">BTA</span> R.04</td>
+                                    <td class="px-6 py-4 text-slate-600"><span class="bg-purple-100 text-purple-700 px-2 py-1 rounded text-xs font-medium mr-2">TPA</span> Lab 2</td>
+                                    <td class="px-6 py-4 text-slate-600"><span class="bg-blue-100 text-blue-700 px-2 py-1 rounded text-xs font-medium mr-2">B.Ing</span> R.04</td>
+                                </tr>
+                                <tr class="hover:bg-indigo-50/50 transition-colors">
+                                    <td class="px-6 py-4 font-bold text-slate-800">Kelompok 5</td>
+                                    <td class="px-6 py-4 text-slate-600"><span class="bg-emerald-100 text-emerald-700 px-2 py-1 rounded text-xs font-medium mr-2">BTA</span> R.05</td>
+                                    <td class="px-6 py-4 text-slate-600"><span class="bg-blue-100 text-blue-700 px-2 py-1 rounded text-xs font-medium mr-2">B.Ing</span> R.05</td>
+                                    <td class="px-6 py-4 text-slate-600"><span class="bg-purple-100 text-purple-700 px-2 py-1 rounded text-xs font-medium mr-2">TPA</span> Lab 1 & 2</td>
+                                </tr>
+                                <tr class="hover:bg-indigo-50/50 transition-colors">
+                                    <td class="px-6 py-4 font-bold text-slate-800">Kelompok 6</td>
+                                    <td class="px-6 py-4 text-slate-600"><span class="bg-emerald-100 text-emerald-700 px-2 py-1 rounded text-xs font-medium mr-2">BTA</span> R.06</td>
+                                    <td class="px-6 py-4 text-slate-600"><span class="bg-blue-100 text-blue-700 px-2 py-1 rounded text-xs font-medium mr-2">B.Ing</span> R.06</td>
+                                    <td class="px-6 py-4 text-slate-600"><span class="bg-purple-100 text-purple-700 px-2 py-1 rounded text-xs font-medium mr-2">TPA</span> Lab 2</td>
+                                </tr>
+                                <tr class="hover:bg-indigo-50/50 transition-colors">
+                                    <td class="px-6 py-4 font-bold text-slate-800">Kelompok 7</td>
+                                    <td class="px-6 py-4 text-slate-600"><span class="bg-purple-100 text-purple-700 px-2 py-1 rounded text-xs font-medium mr-2">TPA</span> Lab 1</td>
+                                    <td class="px-6 py-4 text-slate-600"><span class="bg-emerald-100 text-emerald-700 px-2 py-1 rounded text-xs font-medium mr-2">BTA</span> R.07</td>
+                                    <td class="px-6 py-4 text-slate-600"><span class="bg-blue-100 text-blue-700 px-2 py-1 rounded text-xs font-medium mr-2">B.Ing</span> R.07</td>
+                                </tr>
+                                <tr class="hover:bg-indigo-50/50 transition-colors">
+                                    <td class="px-6 py-4 font-bold text-slate-800">Kelompok 8</td>
+                                    <td class="px-6 py-4 text-slate-600"><span class="bg-purple-100 text-purple-700 px-2 py-1 rounded text-xs font-medium mr-2">TPA</span> Lab 2</td>
+                                    <td class="px-6 py-4 text-slate-600"><span class="bg-emerald-100 text-emerald-700 px-2 py-1 rounded text-xs font-medium mr-2">BTA</span> R.08</td>
+                                    <td class="px-6 py-4 text-slate-600"><span class="bg-blue-100 text-blue-700 px-2 py-1 rounded text-xs font-medium mr-2">B.Ing</span> R.08</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="p-4 bg-orange-50 text-xs md:text-sm text-orange-800 border-t border-orange-100 flex items-start space-x-3">
+                        <i data-lucide="alert-circle" class="w-5 h-5 flex-shrink-0"></i>
+                        <p><strong>Penting:</strong> Agenda umum (persiapan, pengondisian, dll) dimulai pukul 06.30. Sesi tes pertama dimulai tepat pukul 08.00 WIB.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab Content: Petugas -->
+            <div id="petugas-content" class="tab-content">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="p-6 bg-slate-50 border border-slate-200 rounded-2xl hover:shadow-lg transition-shadow">
+                        <div class="font-bold text-lg mb-4 flex items-center text-slate-800">
+                            <div class="bg-emerald-100 text-emerald-600 p-2 rounded-lg mr-3"><i data-lucide="book" class="w-5 h-5"></i></div>
+                            Penguji BTA
+                        </div>
+                        <ul class="text-sm space-y-3 text-slate-600">
+                            <li class="flex items-start"><span class="font-bold text-slate-400 w-5">1.</span> Ahmad Abdur Rofi' N <span class="ml-1 text-xs bg-slate-200 px-1.5 rounded text-slate-600 font-bold">Koor</span></li>
+                            <li class="flex items-start"><span class="font-bold text-slate-400 w-5">2.</span> Shafiyyana Arub S.</li>
+                            <li class="flex items-start"><span class="font-bold text-slate-400 w-5">3.</span> Umeir Akmal Asidiqi, S.Pd.I.</li>
+                            <li class="flex items-start"><span class="font-bold text-slate-400 w-5">4.</span> Iwan Kurniawan, S.Pd.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="p-6 bg-slate-50 border border-slate-200 rounded-2xl hover:shadow-lg transition-shadow">
+                        <div class="font-bold text-lg mb-4 flex items-center text-slate-800">
+                            <div class="bg-blue-100 text-blue-600 p-2 rounded-lg mr-3"><i data-lucide="file-text" class="w-5 h-5"></i></div>
+                            Penguji Tes Tulis
+                        </div>
+                        <ul class="text-sm space-y-3 text-slate-600">
+                            <li class="font-bold text-brand-DEFAULT text-xs uppercase tracking-wider mb-1">Bahasa Inggris</li>
+                            <li class="flex items-start"><span class="font-bold text-slate-400 w-5">1.</span> Lestari <span class="ml-1 text-xs bg-slate-200 px-1.5 rounded text-slate-600 font-bold">Koor</span></li>
+                            <li class="flex items-start"><span class="font-bold text-slate-400 w-5">2.</span> Sapto Kuncoro, S.S.</li>
+                            <li class="flex items-start"><span class="font-bold text-slate-400 w-5">3.</span> Daryati, M.Pd.</li>
+                            
+                            <li class="font-bold text-brand-purple text-xs uppercase tracking-wider mt-5 mb-1">TPA</li>
+                            <li class="flex items-start"><span class="font-bold text-slate-400 w-5">1.</span> Ambar Widhi Hapsarry, ST</li>
+                        </ul>
+                    </div>
+
+                    <div class="p-6 bg-slate-50 border border-slate-200 rounded-2xl hover:shadow-lg transition-shadow">
+                        <div class="font-bold text-lg mb-4 flex items-center text-slate-800">
+                            <div class="bg-pink-100 text-pink-600 p-2 rounded-lg mr-3"><i data-lucide="shield-check" class="w-5 h-5"></i></div>
+                            Support Staff
+                        </div>
+                        <ul class="text-sm space-y-3 text-slate-600">
+                            <li class="font-bold text-slate-800 text-xs uppercase tracking-wider mb-1">Petugas CBT</li>
+                            <li class="flex items-start"><i data-lucide="monitor" class="w-4 h-4 mr-2 text-slate-400"></i> Median Huda Muharomi, S.Kom.</li>
+                            <li class="flex items-start"><i data-lucide="monitor" class="w-4 h-4 mr-2 text-slate-400"></i> Iwan Ardianto, A.Md.</li>
+                            
+                            <li class="font-bold text-slate-800 text-xs uppercase tracking-wider mt-5 mb-1">Parkir & Among Tamu</li>
+                            <li class="flex items-start"><i data-lucide="car" class="w-4 h-4 mr-2 text-slate-400 flex-shrink-0"></i> <span class="leading-tight">Parkir: Bpk. Ahmad N. H. & Bpk. Eighar</span></li>
+                            <li class="flex items-start"><i data-lucide="users" class="w-4 h-4 mr-2 text-slate-400 flex-shrink-0"></i> <span class="leading-tight">Among: Puryadi, Sri L, Adi P, Evi S. M, Ali, Tari</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- UPLOAD DOKUMENTASI (CALL TO ACTION) -->
+        <section id="upload" class="bg-[#0b1120] relative rounded-3xl p-8 md:p-12 shadow-2xl overflow-hidden border border-slate-800 scroll-mt-36">
+            <!-- Glow effect background -->
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-gradient-to-b from-brand-DEFAULT/20 via-transparent to-transparent opacity-50 blur-3xl pointer-events-none"></div>
+            
+            <div class="max-w-3xl mb-10 relative z-10">
+                <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 flex items-center text-white">
+                    <div class="p-3 bg-white/10 rounded-xl mr-4 backdrop-blur-md border border-white/10">
+                        <i data-lucide="cloud-upload" class="w-8 h-8 text-brand-DEFAULT"></i>
+                    </div>
+                    Upload Dokumentasi
+                </h2>
+                <p class="text-slate-400 text-sm md:text-base leading-relaxed">
+                    Mohon bantuan Bapak/Ibu Guru Pendamping untuk mendokumentasikan siswa 
+                    (berupa video pendek maupun foto) selama kegiatan berlangsung. 
+                    Silakan unggah melalui tautan Google Drive kelompok di bawah ini.
+                </p>
+            </div>
+
+            <!-- Links Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 relative z-10">
+                <!-- Card 1 -->
+                <a href="https://drive.google.com/drive/folders/1AphVOHT7XCdi2Cc04itmLU4c0GYuNKYI?usp=sharing" target="_blank" rel="noreferrer" 
+                   class="group flex flex-col justify-between p-5 bg-slate-900 border border-slate-800 rounded-2xl hover:border-brand-DEFAULT hover:bg-slate-800/80 hover:shadow-[0_0_20px_rgba(14,165,233,0.3)] transition-all duration-300">
+                    <div>
+                        <div class="text-sm font-extrabold text-white uppercase tracking-widest mb-1">Kelompok 1</div>
+                        <div class="font-medium text-xs text-brand-DEFAULT">Ibu Omaisaroh</div>
+                    </div>
+                    <div class="mt-6 flex justify-end">
+                        <div class="w-8 h-8 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center group-hover:bg-brand-DEFAULT group-hover:border-brand-DEFAULT text-slate-400 group-hover:text-white transition-all">
+                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Card 2 -->
+                <a href="https://drive.google.com/drive/folders/1jacp8os0e9s6-WjIOJ-AX5XFlB3as84C?usp=sharing" target="_blank" rel="noreferrer" 
+                   class="group flex flex-col justify-between p-5 bg-slate-900 border border-slate-800 rounded-2xl hover:border-brand-DEFAULT hover:bg-slate-800/80 hover:shadow-[0_0_20px_rgba(14,165,233,0.3)] transition-all duration-300">
+                    <div>
+                        <div class="text-sm font-extrabold text-white uppercase tracking-widest mb-1">Kelompok 2</div>
+                        <div class="font-medium text-xs text-brand-DEFAULT">Rosa Widya Ningrum</div>
+                    </div>
+                    <div class="mt-6 flex justify-end">
+                        <div class="w-8 h-8 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center group-hover:bg-brand-DEFAULT group-hover:border-brand-DEFAULT text-slate-400 group-hover:text-white transition-all">
+                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Card 3 -->
+                <a href="https://drive.google.com/drive/folders/1tkgwSd795-XmngvLQvwdVhSxx_8SmSQI?usp=sharing" target="_blank" rel="noreferrer" 
+                   class="group flex flex-col justify-between p-5 bg-slate-900 border border-slate-800 rounded-2xl hover:border-brand-DEFAULT hover:bg-slate-800/80 hover:shadow-[0_0_20px_rgba(14,165,233,0.3)] transition-all duration-300">
+                    <div>
+                        <div class="text-sm font-extrabold text-white uppercase tracking-widest mb-1">Kelompok 3</div>
+                        <div class="font-medium text-xs text-brand-DEFAULT">Sri Wahyuningsih</div>
+                    </div>
+                    <div class="mt-6 flex justify-end">
+                        <div class="w-8 h-8 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center group-hover:bg-brand-DEFAULT group-hover:border-brand-DEFAULT text-slate-400 group-hover:text-white transition-all">
+                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Card 4 -->
+                <a href="https://drive.google.com/drive/folders/1uQo3Smxi3piIuvNIM1E9npaXzx54-yUD?usp=sharing" target="_blank" rel="noreferrer" 
+                   class="group flex flex-col justify-between p-5 bg-slate-900 border border-slate-800 rounded-2xl hover:border-brand-DEFAULT hover:bg-slate-800/80 hover:shadow-[0_0_20px_rgba(14,165,233,0.3)] transition-all duration-300">
+                    <div>
+                        <div class="text-sm font-extrabold text-white uppercase tracking-widest mb-1">Kelompok 4</div>
+                        <div class="font-medium text-xs text-brand-DEFAULT">Endah Wahyuningsih</div>
+                    </div>
+                    <div class="mt-6 flex justify-end">
+                        <div class="w-8 h-8 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center group-hover:bg-brand-DEFAULT group-hover:border-brand-DEFAULT text-slate-400 group-hover:text-white transition-all">
+                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Card 5 -->
+                <a href="https://drive.google.com/drive/folders/1eq9vDSYgPAf6F7NGZDhUui6-bS4DMLRn?usp=sharing" target="_blank" rel="noreferrer" 
+                   class="group flex flex-col justify-between p-5 bg-slate-900 border border-slate-800 rounded-2xl hover:border-brand-DEFAULT hover:bg-slate-800/80 hover:shadow-[0_0_20px_rgba(14,165,233,0.3)] transition-all duration-300">
+                    <div>
+                        <div class="text-sm font-extrabold text-white uppercase tracking-widest mb-1">Kelompok 5</div>
+                        <div class="font-medium text-xs text-brand-DEFAULT">Amalia Ikhlas Sofy P.</div>
+                    </div>
+                    <div class="mt-6 flex justify-end">
+                        <div class="w-8 h-8 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center group-hover:bg-brand-DEFAULT group-hover:border-brand-DEFAULT text-slate-400 group-hover:text-white transition-all">
+                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Card 6 -->
+                <a href="https://drive.google.com/drive/folders/12CKL222MNe8_v44RtxvHO77B3ngV3-ha?usp=sharing" target="_blank" rel="noreferrer" 
+                   class="group flex flex-col justify-between p-5 bg-slate-900 border border-slate-800 rounded-2xl hover:border-brand-DEFAULT hover:bg-slate-800/80 hover:shadow-[0_0_20px_rgba(14,165,233,0.3)] transition-all duration-300">
+                    <div>
+                        <div class="text-sm font-extrabold text-white uppercase tracking-widest mb-1">Kelompok 6</div>
+                        <div class="font-medium text-xs text-brand-DEFAULT">Erlin Nanda Puspita</div>
+                    </div>
+                    <div class="mt-6 flex justify-end">
+                        <div class="w-8 h-8 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center group-hover:bg-brand-DEFAULT group-hover:border-brand-DEFAULT text-slate-400 group-hover:text-white transition-all">
+                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Card 7 -->
+                <a href="https://drive.google.com/drive/folders/1rwxNx3YLsslB9r2E0uCgMNLI_OgvrpW_?usp=sharing" target="_blank" rel="noreferrer" 
+                   class="group flex flex-col justify-between p-5 bg-slate-900 border border-slate-800 rounded-2xl hover:border-brand-DEFAULT hover:bg-slate-800/80 hover:shadow-[0_0_20px_rgba(14,165,233,0.3)] transition-all duration-300">
+                    <div>
+                        <div class="text-sm font-extrabold text-white uppercase tracking-widest mb-1">Kelompok 7</div>
+                        <div class="font-medium text-xs text-brand-DEFAULT">Hendri Lutfiatul H. N.</div>
+                    </div>
+                    <div class="mt-6 flex justify-end">
+                        <div class="w-8 h-8 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center group-hover:bg-brand-DEFAULT group-hover:border-brand-DEFAULT text-slate-400 group-hover:text-white transition-all">
+                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Card 8 -->
+                <a href="https://drive.google.com/drive/folders/1EIE7xGUE0nzHEG1VhpaMkT1vS-3i2tHS?usp=sharing" target="_blank" rel="noreferrer" 
+                   class="group flex flex-col justify-between p-5 bg-slate-900 border border-slate-800 rounded-2xl hover:border-brand-DEFAULT hover:bg-slate-800/80 hover:shadow-[0_0_20px_rgba(14,165,233,0.3)] transition-all duration-300">
+                    <div>
+                        <div class="text-sm font-extrabold text-white uppercase tracking-widest mb-1">Kelompok 8</div>
+                        <div class="font-medium text-xs text-brand-DEFAULT">Dewi Ayu Ningtyas</div>
+                    </div>
+                    <div class="mt-6 flex justify-end">
+                        <div class="w-8 h-8 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center group-hover:bg-brand-DEFAULT group-hover:border-brand-DEFAULT text-slate-400 group-hover:text-white transition-all">
+                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-slate-200 py-10 text-center bg-slate-100">
+        <div class="text-xs text-slate-500 font-medium">
+            <p>Placement Test SMP Muhammadiyah 2 Surakarta © 2026</p>
+            <p class="mt-1 opacity-70">Sistem Informasi Petunjuk Teknis & Dokumentasi</p>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Tab Switching Logic
+        function switchTab(tabId) {
+            // Hide all tab contents
+            document.getElementById('jadwal-content').classList.remove('active');
+            document.getElementById('petugas-content').classList.remove('active');
+            
+            // Remove active state from buttons
+            document.getElementById('tab-jadwal').classList.remove('active');
+            document.getElementById('tab-petugas').classList.remove('active');
+            
+            // Show selected tab content and set button as active
+            document.getElementById(tabId + '-content').classList.add('active');
+            document.getElementById('tab-' + tabId).classList.add('active');
+        }
+    </script>
+</body>
+</html>
